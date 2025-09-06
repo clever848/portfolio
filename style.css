@@ -1,0 +1,26 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+:root
+{
+    --black:black;
+    --bg:hsl(0,0%,5%);
+    --bg-light:hsl(0,0%,10%);
+    --primary:hsl(22, 100%, 50%);
+}
+.container
+{
+    width: 100vw;
+    height: 100vh;
+    background-color: ;
+}
+.nav-bar
+{
+    display: flex;
+    height: 10%;
+    background-color: aqua;
+    
+}
