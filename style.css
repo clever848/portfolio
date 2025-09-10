@@ -4,10 +4,10 @@
     padding: 0px;
     box-sizing: border-box;
 }
-/* html
+html
 {
     scroll-behavior: smooth;
-} */
+}
 body
 {
     overflow-x: hidden;
@@ -112,6 +112,21 @@ body
     width: 60%;
     height: 60%;
     border-radius: 50%;
+    animation: blink 4s ease-in infinite;
+}
+@keyframes blink {
+    0%
+    {
+        opacity: 1;
+    }
+    80%
+    {
+        opacity: 0.7;
+    }
+    100%
+    {
+        opacity: 1;
+    }
 }
 .home-tit
 {
@@ -170,7 +185,7 @@ body
     content: "";
     position: absolute;
     border-radius: 10px;
-    left: -10%;
+    left: -20%;
     top: 0;
     width: 0%;
     height: 100%;
@@ -390,8 +405,9 @@ body
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.contact-name,.submit
+.contact-name,.submit,.up
 {
+    position: relative;
     outline: none;
     border: none;
     border: 2px solid var(--primary);
@@ -408,12 +424,17 @@ body
     padding: 10px 20px;
     height: 40%;
     width: 95%;
+    resize: none;
 }
-.submit
+.submit,.up
 {
     width: 20%;
     cursor: pointer;
     position: relative;
     font-weight: 600;
     font-size: 0.9rem;
+}
+.up
+{
+    width: fit-content;
 }
