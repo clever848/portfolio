@@ -12,13 +12,14 @@
 </head>
 <body>
     <div class="container">
-        <div class="home-main" id = "home-main">
+        <div class="home-main section" id = "home-main">
+            <i class="fa-solid fa-bars menu"></i>
             <div class="nav-bar">
                 <div class="logo-cont">
                     <div class="logo">ABDUL</div>
                 </div>
                 <div class="nav-ele">
-                    <div class="home" onclick="location.href='#home-main'">Home</div>
+                    <div class="home active" onclick="location.href='#home-main'">Home</div>
                     <div class="about" onclick="location.href='#about-main'">About</div>
                     <div class="education" onclick="location.href='#education-main'">Education</div>
                     <div class="contact-me" onclick="location.href='#contact-main'">Contact me</div>
@@ -44,16 +45,18 @@
                 </div>
             </div>
         </div>
-        <div class="about-main" id="about-main">
+        <div class="about-main section" id="about-main">
             <div class="about-tit">About <span class="name">Me</span></div>
-            <div class="img-2-cont">
-                <img src="ajith.jpg" alt="" class="image-2">
+            <div class="about-1">
+                <div class="img-2-cont">
+                    <img src="ajith.jpg" alt="" class="image-2">
+                </div>
+                <div class="about-role">Full stack developer</div>
+                <div class="about-role-dis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus in nobis accusantium impedit consequuntur, excepturi voluptas dolorem. Provident quod molestiae sint aliquam fugiat, et modi repellat. Et impedit itaque, consequatur aliquam ut quas culpa eligendi tempora ipsum eius doloremque ab soluta voluptatum est voluptatibus optio. At ullam eos dolore!</div>
+                <button class="about-read-more">Read more</button>
             </div>
-            <div class="about-role">Full stack developer</div>
-            <div class="about-role-dis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias doloribus in nobis accusantium impedit consequuntur, excepturi voluptas dolorem. Provident quod molestiae sint aliquam fugiat, et modi repellat. Et impedit itaque, consequatur aliquam ut quas culpa eligendi tempora ipsum eius doloremque ab soluta voluptatum est voluptatibus optio. At ullam eos dolore!</div>
-            <button class="about-read-more">Read more</button>
         </div>
-        <div class="education-main" id="education-main">
+        <div class="education-main section" id="education-main">
             <div class="journey">My <span class="name">Journey</span></div>
             <div class="education-sub-1">
                 <div class="edu-tit">Education</div>
@@ -92,7 +95,7 @@
                 </div>
             </div>
         </div>
-        <div class="contact-main" id="contact-main">
+        <div class="contact-main section" id="contact-main">
             <div class="contact-tit">Contact <span class="name">Me!</span></div>
             <div class="contact-cont">
                 <input type="text" class="contact-name" placeholder="Full name">
