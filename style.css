@@ -79,13 +79,18 @@ body
 .show
 {
     position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--bg-light);
+    top: -10%;
+    right: -10%;
+    width: 120%;
+    height: 120%;
+    background-color: var(--bg);
+    /* animation: show-anim 1s ease-in forwards; */
     animation-delay: calc(0.3 * var(--i));
-    z-index: 9999;
+    z-index: 999;
+}
+.nav-bar .show
+{
+    background-color: var(--bg-light);
 }
 @keyframes show-anim {
     0%
@@ -171,15 +176,17 @@ body
     font-family: "Roboto", sans-serif;
     font-weight: 500;
 }
-.home-tit,.role,.role-dis,.home-butt,.social > *,.img-1-cont
+.home-tit,.role,.role-dis,.home-butt,.social > *,.img-1-cont,.about-tit,.img-2-cont,.about-role,
+.about-role-dis,.about-read-more,.journey,.edu-tit,.education-sub-1,.contact-tit,.contact-cont
 {
     position: relative;
 }
-.home-tit .show,.role .show,.role-dis .show,.home-butt .show,.social .show,.facebook .show,
-.twitter .show,.linked-in .show,.img-1-cont .show
+/* .home-tit .show,.role .show,.role-dis .show,.home-butt .show,.social .show,.facebook .show,
+.twitter .show,.linked-in .show,.img-1-cont .show,.about-tit .show
 {
     background-color: var(--bg);
-}
+    background-color: red;
+} */
 .name
 {
     color: var(--primary);
@@ -792,7 +799,7 @@ body
 {
     display: none;
 }
-.color
+.show-class
 {
     animation: show-anim 1s linear forwards;
 }

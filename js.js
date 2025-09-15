@@ -5,22 +5,39 @@ window.onscroll = ()=>
     sections.forEach(sec =>
     {
         let top = window.scrollY;
-        let elePos = sec.offsetTop-100;
+        let elePos = sec.offsetTop-300;
         let eleHei = sec.offsetHeight;
         let id = sec.getAttribute("id");
-        if(top >= elePos && top < (elePos+eleHei))
+        if(top >= elePos && top < (elePos+eleHei-100))
         {
             navEle.forEach(nav =>
             {
                 nav.classList.remove("active");
                 document.querySelector(`[onclick="location.href='#${id}'"]`).classList.add("active");
+                document.querySelectorAll(".section .show").forEach(ele =>
+                {
+                    if(!ele.closest(".nav-bar"))
+                    {
+                        ele.classList.remove("show-class");
+                    }
+                }
+                )
+                document.querySelectorAll(`.${id} .show`).forEach(ele =>
+                {
+                    ele.classList.add("show-class");
+                }
+                )
             }
             )
         }
         document.querySelector(".nav-bar").classList.remove("nav-height");
-        console.log("scrolled");
     }
     )
+    // document.querySelectorAll(".nav-bar .show").forEach(sec =>
+    // {
+    //     sec.classList.add("show-class");
+    // }
+    // )
     // console.log(document.querySelector(".education-main").offsetTop);
     
 }
@@ -41,8 +58,15 @@ for(let i=0;i<4;i++)
         console.log("sections");
     });
 }
-document.querySelectorAll(".home-main .show").forEach(show =>
+document.querySelectorAll(".nav-bar .show").forEach(sec =>
 {
-    show.classList.add("color");
+    sec.classList.add("show-class");
+    console.log("enter");
+}
+)
+document.querySelectorAll(".section .show").forEach(ele =>
+{
+    ele.classList.add("show-class");
+    console.log("enter main");
 }
 )
