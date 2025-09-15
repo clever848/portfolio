@@ -74,6 +74,28 @@ body
     color:var(--primary);
     font-family: "Roboto", sans-serif;
     font-weight: 450;
+    position: relative;
+}
+.show
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-light);
+    animation-delay: calc(0.3 * var(--i));
+    z-index: 9999;
+}
+@keyframes show-anim {
+    0%
+    {
+        width: 100%;
+    }
+    100%
+    {
+        width: 0;
+    }
 }
 .nav-ele
 {
@@ -149,6 +171,15 @@ body
     font-family: "Roboto", sans-serif;
     font-weight: 500;
 }
+.home-tit,.role,.role-dis,.home-butt,.social > *,.img-1-cont
+{
+    position: relative;
+}
+.home-tit .show,.role .show,.role-dis .show,.home-butt .show,.social .show,.facebook .show,
+.twitter .show,.linked-in .show,.img-1-cont .show
+{
+    background-color: var(--bg);
+}
 .name
 {
     color: var(--primary);
@@ -157,8 +188,67 @@ body
 {
     font-size: 2.3rem;
     font-family: "Crimson Pro", serif;
-    font-weight: 300;
-    color: var(--secondary);
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--primary);
+    letter-spacing: 3px;
+    background-image: linear-gradient(var(--primary),var(--primary));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -23rem 0;
+    animation: text-fill 8s linear infinite;
+    animation-delay: 2s;
+    position: relative;
+}
+.role::before
+{
+    content: "";
+    background-color: var(--primary);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 1%;
+    animation: cursor-follow 8s linear infinite;
+    animation-delay: 2s;
+}
+@keyframes text-fill {
+     0%,3%,5%,100%
+    {
+        background-position: -23rem 0;
+    }
+    50%,60%
+    {
+        background-position: 0 0;
+    }
+}
+@keyframes cursor-follow {
+    0%,2%,100%
+    {
+        left: 0;
+        opacity: 1;
+    }
+    3%
+    {
+        opacity: 0;
+    }
+    4%
+    {
+        left: 0;
+        opacity: 1;
+    }
+    54%,56%
+    {
+        opacity: 1;
+    }
+    55%
+    {
+        opacity: 0;
+    }
+    50%,60%
+    {
+        left: 100%;
+    }
 }
 .role-dis
 {
@@ -303,6 +393,36 @@ body
     border-right: 2px solid var(--primary);
     border-radius: 50%;
     padding: 10px; */
+    padding: 10px;
+    border-radius: 50%;
+    position: relative;
+}
+.img-2-cont::before
+{
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    left: 50%;
+    top: 50%;
+    padding: 3px;
+    transform: translate(-50%,-50%);
+    width: 100%;
+    height: 100%;
+    border-top: 2px solid var(--bg);
+    border-left: 2px solid var(--primary);
+    border-right: 2px solid var(--primary);
+    border-bottom: 2px solid var(--bg);
+    animation: about-spin 5s linear infinite;
+}
+@keyframes about-spin
+{
+    from
+    {
+        transform: translate(-50%,-50%) rotate(0deg);
+    }
+    to{
+        transform: translate(-50%,-50%) rotate(360deg);
+    }
 }
 .image-2
 {
@@ -310,35 +430,8 @@ body
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border-top: 2px solid var(--primary);
-    border-left: 2px solid var(--red);
-    border-right: 2px solid var(--red);
-    border-bottom: 2px solid var(--primary);
-    padding: 10px;
+    border: 2px solid var(--primary);
     animation: color-change 2s  ease-in infinite;
-}
-@keyframes color-change {
-    0%
-    {
-        border-top: 2px solid var(--primary);
-        border-left: 2px solid var(--red);
-        border-right: 2px solid var(--red);
-        border-bottom: 2px solid var(--primary);
-    }
-    50%
-    {
-        border-top: 2px solid var(--red);
-        border-left: 2px solid var(--primary);
-        border-right: 2px solid var(--primary);
-        border-bottom: 2px solid var(--red);
-    }
-    90%
-    {
-        border-top: 2px solid var(--primary);
-        border-left: 2px solid var(--red);
-        border-right: 2px solid var(--red);
-        border-bottom: 2px solid var(--primary);
-    }
 }
 .about-role
 {
@@ -568,7 +661,7 @@ body
     }
     .nav-height
     {
-        height: 50%;
+        height: 30%;
     }
     .img-1-cont
     {
@@ -584,7 +677,7 @@ body
     }
     .img-2-cont
     {
-        width: 50%;
+        width: 30%;
     }
     .about-role-dis
     {
@@ -641,7 +734,7 @@ body
     }
     .nav-height
     {
-        height: 50%;
+        height: 30%;
     }
     .img-1-cont
     {
@@ -698,4 +791,8 @@ body
 .hide
 {
     display: none;
+}
+.color
+{
+    animation: show-anim 1s linear forwards;
 }

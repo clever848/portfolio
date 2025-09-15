@@ -41,3 +41,8 @@ for(let i=0;i<4;i++)
         console.log("sections");
     });
 }
+document.querySelectorAll(".home-main .show").forEach(show =>
+{
+    show.classList.add("color");
+}
+)
